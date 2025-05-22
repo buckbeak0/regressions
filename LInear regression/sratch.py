@@ -3,6 +3,8 @@ import matplotlib.pyplot as plt
 
 data = pd.read_csv('Datasets/study_hours_scores_regression.csv')
 
+data.sort_values(by='score', ascending=True)
+
 #mean square error function
 def loss_function(m, b, points):
     total_error = 0
@@ -34,7 +36,7 @@ def gradient_descent(m_now, b_now, points, L):
 m = 0
 b = 0
 L = 0.0001
-epochs = 1000
+epochs = 300
 
 for i in range(epochs):
     if i % 50 == 0:
